@@ -1,8 +1,24 @@
+/* Style global harmonisé */
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-image: url('/assets/images/hero.jpg'); /* Remplace 'ton_image.jpg' par le chemin de ton image */
+    background-size: cover; /* Couvre tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out; /* Animation d'entrée */
+}
+
+/* Animation fade-in pour l'entrée du body */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 header {
@@ -10,25 +26,171 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Arrondir le header */
+    transform: translateY(-30px);
+    opacity: 0;
+    animation: slideIn 1s forwards ease-out; /* Animation d'apparition du header */
+}
+
+/* Animation du header pour le faire glisser depuis le haut */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border-radius: 10px; /* Arrondir le container de la liste */
+    animation: fadeIn 1.5s ease-out; /* Animation du menu */
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 10px;
 }
 
 nav ul li a {
-    color: white;
+    position: relative;
+    bottom: 75px;
+    color: #333;
     text-decoration: none;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-radius: 25px; /* Arrondir les éléments du menu */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-out; /* Animation de l'entrée des éléments du menu */
+}
+
+nav ul li a:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-5px); /* Effet de survol pour soulever l'élément */
+}
+
+h1 {
+    animation: clignotant 1s easy-out forwards;
+}
+
+@keyframes clignotant {
+    0% {
+        opacity: 1;
+    } 50% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+/* Animation pour les éléments du menu qui apparaissent */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .hero {
+    position: relative;
+    z-index: -2;
+    top: 17px;
+    border-radius: 10px;
     text-align: center;
     padding: 2rem;
-    background: #f4f4f4;
+    background: #ffe6f0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards; /* Animation pour l'apparition de la section hero */
 }
+
+/* Animation de la section hero */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: inline-block;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-out; /* Animation pour faire glisser le formulaire */
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s ease; /* Transition pour l'effet de focus */
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #8cbf9f; /* Changer la bordure lors du focus */
+    box-shadow: 0 0 5px rgba(140, 191, 159, 0.5); /* Ajouter une ombre portée */
+}
+
+button {
+    background-color: #ff99cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour le changement de couleur et de position */
+}
+
+button:hover {
+    background-color: #ff80b3;
+    transform: translateY(-3px); /* Effet de survol du bouton */
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards; /* Animation pour l'apparition du footer */
+}
+
+/* Réutilisation de l'animation fadeInUp pour le footer */

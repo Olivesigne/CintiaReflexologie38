@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réflexologie - Témoignages</title>
+    <title>Avis</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/images/logo.png" alt="Logo réflexologie">
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Galerie</a></li>
-                <li><a href="testimonials.html" class="active">Témoignages</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Témoignages</h1>
-        <blockquote>
-            <p>Une expérience incroyable ! Je ressens une vraie différence après chaque séance.</p>
-            <cite>- Marie L.</cite>
-        </blockquote>
-        <blockquote>
-            <p>Un moment de relaxation profonde. Merci pour votre bienveillance.</p>
-            <cite>- Jean P.</cite>
-        </blockquote>
-    </main>
-    <footer>
-        <p>© 2024 Réflexologie - Tous droits réservés.</p>
-    </footer>
+<header>
+    <img src="assets/images/logo.png" alt="Logo réflexologie" style="position: relative; width: 10%; right: 575px; ">
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Galerie</a></li>
+            <li><a href="testmonials.html">Témoignages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>En cours de développement ...</h1>
+<!--<h1>Avis</h1>
+<div id="avis-container"></div>
+
+<script>
+    // Fonction pour récupérer les avis acceptés
+    async function fetchAvis() {
+        try {
+            const response = await fetch("https://c902ac11-03ec-4b53-b264-ec3f3f9ff412-00-2k5o82f22ciem.janeway.repl.co:5000/api/avis_acceptes");
+            const avisList = await response.json();
+
+            const container = document.getElementById("avis-container");
+            container.innerHTML = ""; // Effacer le contenu existant
+
+            avisList.forEach(avis => {
+                const avisDiv = document.createElement("div");
+                avisDiv.className = "avis";
+                avisDiv.innerHTML = `
+                    <strong>${avis.nom}</strong>
+                    <p>${avis.avis}</p>
+                `;
+                container.appendChild(avisDiv);
+            });
+        } catch (error) {
+            console.error("Erreur lors de la récupération des avis :", error);
+        }
+    }
+
+    // Charger les avis au chargement de la page
+    window.onload = fetchAvis;
+</script>-->
 </body>
 </html>
